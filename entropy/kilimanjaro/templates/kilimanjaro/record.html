@@ -1,0 +1,39 @@
+{% extends "kilimanjaro/base.html" %}
+
+{% block title %}
+    Record
+{% endblock %}
+
+{% block content %}
+
+    <div class="container p-5">
+        <h3>Attendance Record</h3>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th class="text-center">Name</th>
+                    <th class="text-center custom-view">Leaves</th>
+                    <th class="text-center custom-view">Travel</th>
+                    <th class="text-center">Attendance %</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for data in record %}
+                    <tr>
+                        <td>{{ data.Name }}</td>
+                        <td class="text-end custom-view">{{ data.Leaves }}</td>
+                        <td class="text-end custom-view">{{ data.Travels }}</td>
+                        {% if data.Attendance < 75  %}
+                            <td class="text-end bg-danger">{{ data.Attendance }}</td>
+                        {% elif data.Attendance < 90 %}
+                            <td class="text-end bg-warning">{{ data.Attendance }}</td>
+                        {% else %}
+                            <td class="text-end bg-success">{{ data.Attendance }}</td>
+                        {% endif %}
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends "kilimanjaro/base.html" %}
+
+{% block title %}
+    Attendance
+{% endblock %}
+
+{% block content %}
+
+    <div class="container p-5">
+        <form action="{% url 'attendance' %}" method="post">
+            {% csrf_token %}
+            {{ form }}
+            <br>
+            <button class="btn btn-success" type="submit">Submit</button>
+        </form>
+    </div>
+    
+{% endblock %}

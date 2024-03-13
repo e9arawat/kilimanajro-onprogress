@@ -1,0 +1,45 @@
+{% extends "kilimanjaro/base.html" %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block content %}
+
+    <div class="container p-5">
+        <h3>WELCOME!</h3>
+        <div class="card shadow-sm">
+            <table class="table">
+                <tr>
+                    <td>Name:</td>
+                    <td>{{ details.Name }}</td>
+                </tr>
+                <tr>
+                    <td>Joined At:</td>
+                    <td>{{ details.Joined_at }}</td>
+                </tr>
+                <tr>
+                    <td>Role:</td>
+                    <td>{{ details.Role }}</td>
+                </tr>
+                <tr>
+                    <td>Manager:</td>
+                    <td>{{ details.Manager }}</td>
+                </tr>
+                <tr>
+                    <td>Leaves:</td>
+                    <td>{{ details.Leaves }} / {{ details.Earned_Leaves }} <span class="custom-view">({{details.Leaves_category}})</span></td>
+                </tr>
+                <tr>
+                    <td>Travel:</td>
+                    <td>{{ details.Travels }}</td>
+                </tr>
+                <tr>
+                    <td>Attendance %:</td>
+                    <td>{{ details.Attendance }}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+{% endblock %}

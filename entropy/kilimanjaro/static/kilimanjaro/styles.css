@@ -1,0 +1,9 @@
+body { 
+    background-image: url(images/background-img.jpg);
+}
+
+@media screen and (max-width:600px) {
+    .custom-view {
+        display: none;
+    }
+}
